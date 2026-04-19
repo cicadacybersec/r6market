@@ -1,0 +1,253 @@
+/* Trust Page Specific Styles */
+.trust-main {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    /* Removed max-width and margin: 0 auto to make it full width */
+    padding-left: 24px; /* Keep padding for content inside */
+    padding-right: 24px; /* Keep padding for content inside */
+    position: relative; /* Needed for pseudo-element positioning */
+    background-color: transparent; /* Ensure the main element itself is transparent */
+}
+
+.trust-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/trustbg.png'); /* Path to the background image */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.6; /* Set the opacity of the background image */
+    z-index: -1; /* Place behind the content */
+}
+
+.trust-hero {
+    text-align: center;
+    margin-bottom: 80px;
+    max-width: 1100px; /* Constrain content width */
+    margin-left: auto; /* Center content */
+    margin-right: auto; /* Center content */
+}
+
+.trust-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; /* Increased font size */
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.trust-heading {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.trust-subheading-box {
+    max-width: 960px; /* Further increased horizontal span */
+    margin: 0 auto 40px auto; /* Center the box and add bottom margin */
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(232,40,26,0.25);
+    box-shadow:
+        0 0 20px rgba(232,40,26,0.1),
+        inset 0 0 20px rgba(232,40,26,0.05);
+    padding: 16px 20px; /* Adjusted padding for content */
+    position: relative;
+    overflow: hidden;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-subheading-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(232,40,26,0.1) 0%, transparent 70%);
+    background-size: 300% 300%;
+    animation: pulse-background 10s infinite ease-in-out alternate;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.trust-subheading {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    color: var(--white); /* Changed text color to white */
+    max-width: none; /* Let parent box control width */
+    margin: 0; /* Remove margin as parent box handles it */
+    line-height: 1.8;
+    position: relative; /* Ensure text is above pseudo-element */
+    z-index: 1;
+}
+
+.trust-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns */
+    grid-auto-rows: 1fr; /* Ensure all rows take up equal height */
+    gap: 30px;
+    margin-bottom: 80px;
+    max-width: 1100px; /* Constrain content width */
+    margin-left: auto; /* Center content */
+    margin-right: auto; /* Center content */
+}
+
+.trust-feature-card {
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(232,40,26,0.25);
+    box-shadow:
+        0 0 20px rgba(232,40,26,0.1),
+        inset 0 0 20px rgba(232,40,26,0.05);
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribute content vertically */
+    height: 100%; /* Ensure the card fills the height of its grid cell */
+    transition: all 0.3s ease;
+}
+
+.trust-feature-card:hover {
+    border-color: rgba(232, 40, 26, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--glow);
+}
+
+.feature-icon {
+    font-size: 48px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.feature-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--white);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.feature-description {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--silver);
+    line-height: 2.3; /* Further increased line-height to fill space */
+}
+
+.trust-cta {
+    text-align: center;
+    max-width: 1100px; /* Constrain content width */
+    margin-left: auto; /* Center content */
+    margin-right: auto; /* Center content */
+}
+
+.trust-cta-box {
+    max-width: 640px; /* Consistent with other premium boxes */
+    margin: 0 auto; /* Center the box */
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(232,40,26,0.25);
+    box-shadow:
+        0 0 20px rgba(232,40,26,0.1),
+        inset 0 0 20px rgba(232,40,26,0.05);
+    padding: 20px; /* Adjusted padding for content */
+    position: relative;
+    overflow: hidden;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.trust-cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(232,40,26,0.1) 0%, transparent 70%);
+    background-size: 300% 300%;
+    animation: pulse-background 10s infinite ease-in-out alternate;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Re-using the pulse-background keyframes from accounts.css or howitworks.css */
+/* If not already present in a globally imported CSS, it would need to be added here */
+@keyframes pulse-background {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.trust-cta-text {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--white); /* Changed text color to white */
+    margin-bottom: 20px; /* Adjusted margin to fit within new box padding */
+    position: relative; /* Ensure text is above pseudo-element */
+    z-index: 1;
+}
+
+/* Responsive adjustments for trust page */
+@media (max-width: 768px) {
+    .trust-heading {
+        font-size: 42px;
+    }
+    .trust-subheading {
+        font-size: 16px;
+    }
+    .trust-feature-card {
+        padding: 30px;
+    }
+    .feature-icon {
+        font-size: 40px;
+    }
+    .feature-title {
+        font-size: 20px;
+    }
+    .feature-description {
+        font-size: 14px;
+    }
+    .trust-cta-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trust-heading {
+        font-size: 36px;
+    }
+    .trust-subheading {
+        font-size: 14px;
+    }
+    .feature-icon {
+        font-size: 36px;
+    }
+    .feature-title {
+        font-size: 18px;
+    }
+}

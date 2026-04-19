@@ -1,0 +1,266 @@
+/* Request Account Page Specific Styles */
+.request-main {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    /* Removed max-width and margin: 0 auto to make it full width */
+    padding-left: 24px; /* Keep padding for content inside */
+    padding-right: 24px; /* Keep padding for content inside */
+    position: relative; /* Needed for pseudo-element positioning */
+    background-color: transparent; /* Ensure the main element itself is transparent */
+}
+
+.request-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/request.png'); /* Path to the background image */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.6; /* Set the opacity of the background image */
+    z-index: -1; /* Place behind the content */
+}
+
+.sourced-section {
+  padding: 100px 24px;
+  background-image: url('../images/sourcing-bg.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  text-align: center;
+  position: relative;
+}
+
+.sourced-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8,8,8,0.55);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sourced-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.sourced-header-box {
+    max-width: 800px; /* Adjust width as needed, similar to other boxes */
+    margin: 0 auto 60px auto; /* Center the box and add bottom margin */
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(232,40,26,0.25);
+    box-shadow:
+        0 0 20px rgba(232,40,26,0.1),
+        inset 0 0 20px rgba(232,40,26,0.05);
+    padding: 20px; /* Adjusted padding for content */
+    position: relative;
+    overflow: hidden;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sourced-header-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(232,40,26,0.1) 0%, transparent 70%);
+    background-size: 300% 300%;
+    animation: pulse-background 10s infinite ease-in-out alternate;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Keyframes for pulse-background, if not already globally defined */
+@keyframes pulse-background {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.sourced-header {
+  max-width: 700px; /* Keep content width within the box */
+  margin: 0 auto; /* Center content within the box */
+  position: relative; /* Ensure content is above pseudo-element */
+  z-index: 1;
+}
+
+.sourced-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 16px;
+  text-shadow: 0 0 20px rgba(232,40,26,0.5);
+}
+
+.sourced-heading {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--accent); /* Changed color to match enhancements-title */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  text-shadow:
+        0 0 6px rgba(232,40,26,0.6),
+        0 0 18px rgba(232,40,26,0.4),
+        0 0 35px rgba(232,40,26,0.2); /* Updated text-shadow */
+}
+
+.sourced-subtext {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #ffffff; /* Ensure text is white */
+  line-height: 1.8;
+  max-width: 580px;
+  margin: 0 auto;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.9);
+}
+
+.sourced-form-wrapper {
+  max-width: 560px;
+  margin: 0 auto;
+  background: rgba(10,10,10,0.9);
+  border: 1px solid rgba(232,40,26,0.25);
+  box-shadow:
+      0 0 20px rgba(232,40,26,0.1),
+      inset 0 0 20px rgba(232,40,26,0.05);
+  padding: 48px 40px;
+  text-align: left;
+}
+
+.sourced-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sourced-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.sourced-input,
+.sourced-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: #080808;
+  border: 1px solid #E8281A;
+  color: #ffffff;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.sourced-input:focus,
+.sourced-textarea:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 1px #ffffff;
+}
+
+.sourced-input::placeholder,
+.sourced-textarea::placeholder {
+  color: rgba(255,255,255,0.25);
+  font-size: 14px;
+}
+
+.sourced-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.sourced-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+select.sourced-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23E8281A' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+select.sourced-input option {
+  background: #080808;
+  color: #ffffff;
+}
+
+.sourced-submit {
+  background: linear-gradient(90deg, #e8281a, #ff3c2e);
+  box-shadow: 0 0 12px rgba(232,40,26,0.4);
+  color: #ffffff;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.sourced-submit:hover {
+  background: linear-gradient(90deg, #ff3c2e, #e8281a); /* Reverse gradient on hover for effect */
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(232,40,26,0.7);
+}
+
+/* Responsive adjustments for request page */
+@media (max-width: 768px) {
+    .sourced-header-box {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+    .sourced-heading {
+        font-size: 42px;
+    }
+    .sourced-subtext {
+        font-size: 16px;
+    }
+    .sourced-form-wrapper {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sourced-header-box {
+        padding: 15px;
+    }
+    .sourced-heading {
+        font-size: 36px;
+    }
+    .sourced-subtext {
+        font-size: 14px;
+    }
+    .sourced-form-wrapper {
+        padding: 15px;
+    }
+}

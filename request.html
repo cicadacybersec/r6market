@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Request Account - SiegeVault</title>
+    <script src="navbar-loader.js" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="request-main">
+        <section class="sourced-section">
+            <div class="sourced-header-box fade-in-up" style="animation-delay: 0.3s;">
+                <div class="sourced-header">
+                    <span class="sourced-eyebrow">CUSTOM SOURCING</span>
+                    <h2 class="sourced-heading">YOUR DREAM ACCOUNT, SOURCED.</h2>
+                    <p class="sourced-subtext">Can't find the exact account you desire in our current listings? Provide us with your specific requirements, and our sourcing team will make reasonable efforts to locate suitable options through selected sources.</p>
+                    <p class="sourced-subtext">Once you inquire, you will be assigned a reference number via email from one of our representatives @siegevault.org. This assigned number will be referenced in all future communication regarding your request.</p>
+                    <p class="sourced-subtext">Should your requested account become available, you will be given a limited priority window to proceed before the account is made publicly available.</p>
+                </div>
+            </div>
+
+            <div class="sourced-form-wrapper fade-in-up" style="animation-delay: 0.5s;">
+                <div class="request-form-container">
+                    <form id="accountRequestForm" class="sourced-form" method="POST" action="https://formspree.io/f/xqewbkde">
+                        <input type="hidden" name="_subject" value="New SiegeVault Account Request">
+                        <div class="form-group">
+                            <label for="desiredRank" class="sourced-label">Desired Rank/MMR:</label>
+                            <select id="desiredRank" name="desiredRank" required class="sourced-input">
+                                <option value="">Select Rank/MMR</option>
+                                <option value="Unranked">Unranked</option>
+                                <option value="Unranked Fresh Lvl50">Unranked Fresh Lvl50</option>
+                                <option value="Champion">Champion</option>
+                                <option value="Diamond">Diamond</option>
+                                <option value="Emerald">Emerald</option>
+                                <option value="Platinum">Platinum</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Silver">Silver</option>
+                                <option value="Bronze">Bronze</option>
+                                <option value="Copper">Copper</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="desiredSkins" class="sourced-label">Specific Skins/Cosmetics:</label>
+                            <textarea id="desiredSkins" name="desiredSkins" placeholder="e.g., Black Ice R4C, Glacier MP5, Pro League Sets" class="sourced-textarea"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="platform" class="sourced-label">Platform:</label>
+                            <select id="platform" name="platform" required class="sourced-input">
+                                <option value="">Select Platform</option>
+                                <option value="PC">PC</option>
+                                <option value="PlayStation">PlayStation</option>
+                                <option value="Xbox">Xbox</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget" class="sourced-label">Target Budget (USD):</label>
+                            <input type="number" id="budget" name="budget" placeholder="e.g., 200" min="0" class="sourced-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactName" class="sourced-label">Your Name:</label>
+                            <input type="text" id="contactName" name="contactName" required class="sourced-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMethod" class="sourced-label">Your Email:</label>
+                            <input type="email" id="contactMethod" name="contactMethod" placeholder="your@email.com" required class="sourced-input">
+                        </div>
+                        <div class="cf-turnstile" 
+                             data-sitekey="0x4AAAAAAC8n2vUT0SjWq8WC"
+                             data-theme="dark"
+                             data-action="request"
+                             data-submit-button-id="requestFormSubmit"
+                             id="requestFormTurnstile">
+                        </div>
+                        <div class="form-group terms-checkbox-group" style="margin-top: 20px;">
+                            <label style="display: inline; font-size: 13px; color: var(--silver);">
+                                <input type="checkbox" class="termsCheck" required style="margin-right: 10px;">
+                                By submitting this form, you agree to our <a href="terms.html" style="color: var(--accent); text-decoration: underline;">Terms &amp; Conditions</a> and <a href="privacy.html" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>, and acknowledge that certain tools may be subject to third-party platform restrictions. You accept full responsibility for their use.
+                            </label>
+                        </div>
+                        <div class="form-error-message" style="color: var(--accent); font-size: 14px; margin-top: 10px; text-align: center; display: none;">
+                            Please complete verification and accept the terms before continuing.
+                        </div>
+                        <button type="submit" id="requestFormSubmit" class="sourced-submit">SUBMIT REQUEST</button>
+                    </form>
+                    <div id="requestConfirmationMessage" class="confirmation-message" style="display: none;">
+                        <span class="checkmark">✓</span> Your request has been submitted. We'll be in touch if we find a match!
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="images/text-logo.png" alt="SiegeVault" class="footer-logo-img">
+            <div class="footer-legal-links">
+                <a href="privacy.html" class="footer-nav-link">Privacy Policy</a>
+                <span> · </span>
+                <a href="terms.html" class="footer-nav-link">Terms &amp; Conditions</a>
+            </div>
+            <p class="footer-info">siegevault.org &copy; 2026 SiegeVault. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="script.js"></script>
+    <script src="js/global-form-handler.js" defer></script>
+</body>
+</html>

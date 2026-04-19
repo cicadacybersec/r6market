@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Contact - SiegeVault</title>
+    <script src="navbar-loader.js" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="contact-main">
+        <div class="contact-page-layout">
+            <div class="page-background-glow"></div>
+            <div class="page-background-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <!-- LEFT IMAGE PANEL -->
+            <div class="contact-left-panel">
+                <img src="images/contactleft.png" 
+                     alt="Contact Us" 
+                     class="contact-left-image">
+            </div>
+
+            <!-- CENTER CONTENT PANEL -->
+            <div class="contact-center-panel">
+                <div class="contact-content-wrapper">
+                    <h1 class="content-page-heading fade-in-up" style="animation-delay: 0.3s;">CONTACT</h1>
+                    <div class="contact-form-box">
+                        <div class="contact-content">
+                            <p>Have questions or need assistance? Fill out the form below, and a vetted member of our sales team will reach out to you directly from an @siegevault.org email address.</p>
+                            
+                            <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/xqewbkde">
+                                <input type="hidden" name="_subject" value="New SiegeVault Contact Form Submission">
+                                <div class="form-group">
+                                    <label for="contactName">Your Name:</label>
+                                    <input type="text" id="contactName" name="contactName" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactEmail">Your Email:</label>
+                                    <input type="email" id="contactEmail" name="contactEmail" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactSubject">Subject:</label>
+                                    <input type="text" id="contactSubject" name="contactSubject" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactMessage">Message:</label>
+                                    <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+                                </div>
+
+                                <!-- TURNSTILE -->
+                                <div class="cf-turnstile" 
+                                     data-sitekey="0x4AAAAAAC8n2vUT0SjWq8WC"
+                                     data-theme="dark"
+                                     data-action="contact"
+                                     data-submit-button-id="contactFormSubmit"
+                                     id="contactTurnstile">
+                                </div>
+
+                                <div class="form-group terms-checkbox-group" style="margin-top: 20px;">
+                                    <label style="display: inline; font-size: 13px; color: var(--silver);">
+                                        <input type="checkbox" class="termsCheck" required style="margin-right: 10px;">
+                                        By submitting this form, you agree to our <a href="terms.html" style="color: var(--accent); text-decoration: underline;">Terms &amp; Conditions</a> and <a href="privacy.html" style="color: var(--accent); text-decoration: underline;">Privacy Policy</a>, and acknowledge that certain tools may be subject to third-party platform restrictions. You accept full responsibility for their use.
+                                    </label>
+                                </div>
+                                <div class="form-error-message" style="color: var(--accent); font-size: 14px; margin-top: 10px; text-align: center; display: none;">
+                                    Please complete verification and accept the terms before continuing.
+                                </div>
+                                <button type="submit" id="contactFormSubmit" class="cta-button">SEND MESSAGE</button>
+                            </form>
+
+                            <div id="contactConfirmationMessage" class="confirmation-message" style="display: none; margin-top: 20px;">
+                                <span class="checkmark">✓</span> Your message has been sent. We'll be in touch shortly!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE PANEL -->
+            <div class="contact-right-panel">
+                <img src="images/contact.png" 
+                     alt="Contact Us" 
+                     class="contact-right-image">
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="images/text-logo.png" alt="SiegeVault" class="footer-logo-img">
+            <div class="footer-legal-links">
+                <a href="privacy.html" class="footer-nav-link">Privacy Policy</a>
+                <span> · </span>
+                <a href="terms.html" class="footer-nav-link">Terms &amp; Conditions</a>
+            </div>
+            <p class="footer-info">siegevault.org &copy; 2026 SiegeVault. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- TURNSTILE SCRIPT -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="script.js"></script>
+    <script src="js/global-form-handler.js" defer></script>
+</body>
+</html>

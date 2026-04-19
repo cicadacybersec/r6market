@@ -1,0 +1,211 @@
+/* Contact Page Specific Styles */
+.contact-main {
+    padding-top: 80px; /* Adjust for navbar height */
+    min-height: calc(100vh - 80px); /* Full viewport height minus navbar */
+    display: flex; /* To make contact-page-layout fill its height */
+    flex-direction: column;
+}
+
+.contact-page-layout {
+    position: relative;
+    overflow: hidden;
+    display: grid; /* Use grid for 3-column layout */
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    flex: 1;
+    background-color: #010000;
+}
+
+/* Styles for the left and right image panels */
+.contact-left-panel,
+.contact-right-panel {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center image within its slot */
+    align-items: stretch;
+}
+
+.contact-left-image,
+.contact-right-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.1); /* Apply slight scale for cinematic crop */
+    z-index: 1;
+}
+
+/* Styles for the center content panel */
+.contact-center-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top vertically */
+    align-items: center; /* Center the content block horizontally */
+    padding: 40px 0; /* Add vertical padding, horizontal padding will be on content wrapper */
+}
+
+.contact-content-wrapper {
+    width: 100%; /* Ensure it takes full width of panel */
+    max-width: 600px; /* Constrain content width */
+    padding: 0 40px; /* Apply horizontal padding here */
+}
+
+/* Overrides for existing classes within the new layout */
+.contact-page-layout .content-page-heading {
+    margin-bottom: 30px;
+    color: var(--accent);
+    text-align: center; /* Center the heading */
+    text-shadow:
+        0 0 6px rgba(232,40,26,0.6),
+        0 0 18px rgba(232,40,26,0.4),
+        0 0 35px rgba(232,40,26,0.2);
+}
+
+.contact-form-box {
+    max-width: 640px; /* Consistent with other premium boxes */
+    margin: 0 auto; /* Center the box */
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(232,40,26,0.25);
+    box-shadow:
+        0 0 20px rgba(232,40,26,0.1),
+        inset 0 0 20px rgba(232,40,26,0.05);
+    padding: 20px; /* Adjusted padding for content */
+    position: relative;
+    overflow: hidden;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(232,40,26,0.1) 0%, transparent 70%);
+    background-size: 300% 300%;
+    animation: pulse-background 10s infinite ease-in-out alternate;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Re-using the pulse-background keyframes from accounts.css or howitworks.css */
+/* If not already present in a globally imported CSS, it would need to be added here */
+@keyframes pulse-background {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.contact-content {
+    max-width: 500px; /* Constrain form width */
+    margin: 0; /* Remove auto margin */
+    padding-top: 0; /* Remove padding-top */
+    position: relative; /* Ensure content is above pseudo-element */
+    z-index: 1;
+}
+
+.contact-content p {
+    margin-bottom: 25px; /* Adjust paragraph margin */
+    color: var(--white); /* Change text color to white */
+}
+
+/* Form Styling (reusing from modal.css where applicable) */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--silver);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact-form .form-group input[type="text"],
+.contact-form .form-group input[type="email"],
+.contact-form .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form .form-group input:focus,
+.contact-form .form-group textarea:focus {
+    border-color: var(--accent);
+}
+
+.contact-form .cta-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments for contact page layout */
+@media (max-width: 992px) {
+    .contact-page-layout {
+        grid-template-columns: 0.5fr 1fr 0.5fr; /* Adjust columns for slightly smaller screens */
+    }
+    .contact-content-wrapper {
+        padding: 0 20px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page-layout {
+        grid-template-columns: 1fr; /* Stack on mobile */
+        padding-top: 60px; /* Adjust for smaller navbar on mobile */
+        min-height: auto; /* Allow height to adjust */
+    }
+    .contact-left-panel,
+    .contact-right-panel {
+        display: none; /* Hide images on mobile */
+    }
+    .contact-center-panel {
+        padding: 40px 20px; /* Adjust padding for mobile */
+        text-align: center; /* Center content on mobile */
+    }
+    .contact-content-wrapper {
+        padding: 0; /* Remove wrapper padding as panel handles it */
+        max-width: 100%; /* Allow content to take full width */
+    }
+    .contact-page-layout .content-page-heading {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact-content {
+        max-width: 100%; /* Allow form to take full width */
+        margin: 0 auto; /* Center form */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page-layout .content-page-heading {
+        font-size: 36px;
+    }
+    .contact-content p {
+        font-size: 14px;
+    }
+    .contact-form .form-group label {
+        font-size: 13px;
+    }
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

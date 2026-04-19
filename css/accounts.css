@@ -1,0 +1,389 @@
+/* Accounts Section */
+.accounts-section {
+    padding: 80px 0;
+    text-align: center;
+    /* Removed background-color */
+}
+
+.accounts-section .section-label {
+    margin-bottom: 0;
+}
+
+.accounts-section .section-heading {
+    margin-top: 10px;
+    color: var(--accent); /* Changed color to match enhancements-title */
+    text-shadow:
+        0 0 6px rgba(232,40,26,0.6),
+        0 0 18px rgba(232,40,26,0.4),
+        0 0 35px rgba(232,40,26,0.2);
+}
+
+.account-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.account-card {
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(232,40,26,0.25);
+    box-shadow:
+        0 0 20px rgba(232,40,26,0.1),
+        inset 0 0 20px rgba(232,40,26,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.account-card:hover {
+    border-color: rgba(232, 40, 26, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px var(--glow);
+}
+
+.account-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 20px; /* Reduced padding */
+    border-left: 3px solid var(--accent);
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.account-card .card-id {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--silver);
+    text-transform: uppercase;
+}
+
+.account-price {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--white);
+    margin-left: auto; /* Push price to the right */
+    white-space: nowrap;
+}
+
+.account-card .status-badge,
+.carousel-slide .status-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.account-card .status-badge.available,
+.carousel-slide .status-badge.available {
+    background-color: #22c55e;
+    color: var(--white);
+}
+
+.account-card .status-badge.sold {
+    background-color: #6b7280; /* Gray color for sold */
+    color: var(--white);
+}
+
+.sold-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    background-color: rgba(232, 40, 26, 0.9);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    padding: 10px 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 10;
+    pointer-events: none;
+    width: 150%; /* Ensure it covers the card */
+    text-align: center;
+    border: 2px solid var(--white);
+}
+
+.account-card {
+    position: relative; /* Needed for absolute positioning of sold-banner */
+    overflow: hidden; /* Hide parts of the banner that go outside */
+}
+
+.account-card .sold-button {
+    background-color: #6b7280; /* Gray color for sold button */
+    cursor: not-allowed;
+    opacity: 0.7;
+    pointer-events: none; /* Prevent clicks */
+}
+
+.account-card .sold-button:hover {
+    background-color: #6b7280; /* Keep gray on hover */
+    transform: none; /* No hover effect */
+    box-shadow: none; /* No hover shadow */
+}
+
+.screenshot-placeholder {
+    width: 100%;
+    height: 160px; /* keep consistent with current layout */
+    position: relative;
+    background-color: #111;
+    border: 1px dashed rgba(232, 40, 26, 0.25);
+    overflow: hidden; /* Ensure image stays within bounds */
+    margin-bottom: 10px; /* Further reduced margin */
+}
+
+.screenshot-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image must stretch to fill the full box */
+    display: block;
+    cursor: pointer; /* Indicate clickability */
+}
+
+.card-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.highlights-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    color: var(--silver);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    margin-bottom: 7px; /* Reduced margin */
+}
+
+.highlights-list {
+    list-style: none;
+    padding: 0 20px;
+    margin-bottom: 10px; /* Further reduced margin */
+}
+
+.highlights-list li {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--silver);
+    margin-bottom: 5px; /* Reduced margin */
+    position: relative;
+    padding-left: 20px;
+}
+
+.highlights-list li::before {
+    content: '—';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.account-card .register-button {
+    background-color: var(--accent);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 7px; /* Further reduced padding */
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.account-card .register-button:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--glow);
+}
+
+.sold-accounts-info {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 12px; /* Reduced by ~20% from 14px */
+    color: var(--white); /* Changed text color to white */
+    max-width: 640px; /* Reduced by 20% from 800px */
+    margin: 32px auto 0 auto; /* Reduced by 20% from 40px */
+    line-height: 1.6;
+    text-align: center;
+    opacity: 0.9; /* Slightly increased opacity for better visibility */
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(232,40,26,0.25); /* Updated border */
+    box-shadow:
+        0 0 20px rgba(232,40,26,0.1),
+        inset 0 0 20px rgba(232,40,26,0.05);
+    padding: 16px 20px; /* Reduced vertical padding by 20% and added horizontal padding */
+    position: relative; /* Needed for pseudo-element positioning */
+    overflow: hidden; /* Hide parts of the animation that go outside */
+}
+
+.sold-accounts-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(232,40,26,0.1) 0%, transparent 70%);
+    background-size: 300% 300%;
+    animation: pulse-background 10s infinite ease-in-out alternate;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes pulse-background {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* New Accounts Page Layout */
+.accounts-page-layout {
+    position: relative; /* Added for background animations */
+    overflow: hidden; /* Added for background animations */
+    display: flex;
+    gap: 100px; /* Increased gap to 100px */
+    min-height: calc(100vh - 80px); /* Adjust for navbar height */
+    padding-top: 80px; /* Push content below fixed navbar */
+    background-color: var(--bg); /* Ensure background matches */
+}
+
+
+.accounts-left-panel {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    overflow: visible; /* Allow image to extend */
+    display: flex;
+    justify-content: flex-start; /* Align image to the left */
+    align-items: stretch;
+}
+
+.accounts-left-image {
+    position: absolute; /* Position relative to .accounts-left-panel */
+    top: 0;
+    right: 0; /* Align to the right of its container */
+    width: 120%; /* Extend beyond container */
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    margin-right: -20%; /* Pull image to the right to show its left part */
+    z-index: 1;
+}
+
+.accounts-right-panel {
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    padding: 40px 180px 40px 40px; /* Further increased right padding to shift content left */
+    position: relative; /* Ensure z-index works */
+    z-index: 1; /* Ensure content is above bg-pulse effect */
+}
+
+/* Overrides for existing classes within the new layout */
+.accounts-page-layout .content-page-container {
+    max-width: none; /* Let the parent control width */
+    padding: 0; /* Remove padding as it's handled by .accounts-right-panel */
+}
+
+.accounts-page-layout .accounts-section {
+    padding: 0; /* Remove padding from section as it's handled by .accounts-right-panel */
+    text-align: left; /* Align text to left within the right panel */
+}
+
+.accounts-page-layout .account-cards-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    max-width: none; /* Remove max-width constraint */
+    margin: 0; /* Remove auto margin */
+    padding-top: 0; /* Remove padding-top */
+}
+
+/* Responsive adjustments for accounts page layout */
+@media (max-width: 768px) {
+    .accounts-page-layout {
+        flex-direction: column;
+        padding-top: 60px; /* Adjust for smaller navbar on mobile */
+        min-height: auto; /* Allow height to adjust */
+    }
+    .accounts-left-panel {
+        display: none; /* Hide image on mobile */
+    }
+    .accounts-right-panel {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 40px 20px; /* Adjust padding for mobile */
+        text-align: center; /* Center content on mobile */
+    }
+    .accounts-page-layout .accounts-section {
+        text-align: center; /* Center section content on mobile */
+    }
+    .accounts-page-layout .accounts-section .section-heading {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .accounts-page-layout .account-cards-grid {
+        grid-template-columns: 1fr; /* Already 1fr, but ensure */
+        max-width: 400px; /* Re-apply max-width for single column */
+        margin: 0 auto; /* Center grid on mobile */
+    }
+}
+
+/* Styles for the slideshow on account-1.html */
+#account1-slideshow-container {
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Fixed height as per original inline style */
+    /* Other styles like background-color, border, margin-bottom are kept from original inline style */
+}
+
+#account1-slideshow-container #slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+#account1-slideshow-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--white);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 24px;
+    line-height: 1;
+    transition: background-color 0.3s ease;
+}
+
+#account1-slideshow-container button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#account1-slideshow-container #slideshow-prev {
+    left: 10px;
+}
+
+#account1-slideshow-container #slideshow-next {
+    right: 10px;
+}

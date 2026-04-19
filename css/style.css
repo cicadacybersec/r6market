@@ -1,0 +1,442 @@
+/* General styles for the enhancements section */
+.enhancements-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #0a0a0a; /* Dark background */
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+.enhancements-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(232, 40, 26, 0.03) 0%, rgba(232, 40, 26, 0.01) 30%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.enhancements-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(115deg, rgba(232, 40, 26, 0.005) 0px, rgba(232, 40, 26, 0.005) 2px, transparent 2px, transparent 100px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+.enhancements-container {
+    display: flex;
+    align-items: stretch; /* Allow children to stretch to fill height */
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    gap: 40px;
+}
+
+.enhancements-content-left {
+    flex: 1;
+    max-width: 600px;
+    color: #fff;
+    text-align: left;
+    display: flex; /* Use flex to push content to top if needed */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically within its flex item */
+}
+
+.enhancements-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: var(--accent); /* Red accent */
+    text-shadow:
+        0 0 6px rgba(232,40,26,0.6),
+        0 0 18px rgba(232,40,26,0.4),
+        0 0 35px rgba(232,40,26,0.2);
+}
+
+.enhancements-tagline {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.product-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.product-card {
+    background: rgba(10,10,10,0.9);
+    border: 1px solid rgba(232,40,26,0.25);
+    border-radius: 10px; /* Keep existing border-radius */
+    padding: 30px; /* Keep existing padding */
+    box-shadow:
+        0 0 20px rgba(232,40,26,0.1),
+        inset 0 0 20px rgba(232,40,26,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Keep existing transition */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(232, 40, 26, 0.3);
+}
+
+.product-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.product-card-price {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.product-card-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.product-card-features li {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1em;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.product-card-features li::before {
+    content: '✓';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.product-card-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #e8281a, #ff3c2e);
+    box-shadow: 0 0 12px rgba(232,40,26,0.4);
+    color: #0a0a0a; /* Keep text color as specified */
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Add box-shadow to transition */
+    border: none;
+    cursor: pointer;
+}
+
+/* Detection Status Card Specific Styles */
+.detection-status-card {
+    padding: 15px 25px; /* Reduced padding for a smaller box */
+    margin-bottom: 30px; /* Space below the card */
+}
+
+.detection-status-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; /* Space between elements */
+}
+
+.detection-status-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4em; /* Slightly smaller title */
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap; /* Keep title on one line */
+}
+
+.detection-status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Reduced gap */
+    flex-grow: 1; /* Allow it to take available space */
+    justify-content: flex-end; /* Push status to the right */
+}
+
+.status-light {
+    width: 16px; /* Slightly smaller light */
+    height: 16px;
+    border-radius: 50%;
+    background-color: #6b7280; /* Default gray */
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+.status-light.detected {
+    background-color: #22c55e; /* Green for detected */
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+.status-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1em; /* Smaller text */
+    font-weight: 700;
+    color: #6b7280; /* Default gray */
+    text-transform: uppercase;
+    letter-spacing: 0.5px; /* Reduced letter spacing */
+    white-space: nowrap; /* Keep text on one line */
+}
+
+.status-text.detected {
+    color: #22c55e; /* Green for detected */
+    text-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+}
+
+/* Info Icon and Tooltip */
+.info-icon-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px; /* Space from status text */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 0 8px rgba(232, 40, 26, 0.4);
+}
+
+.info-tooltip {
+    visibility: hidden;
+    width: 320px; /* Wider tooltip */
+    background-color: #1a1a1a; /* Slightly darker background */
+    color: var(--silver);
+    text-align: left;
+    border-radius: 8px;
+    padding: 20px; /* More padding */
+    position: absolute;
+    z-index: 10;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95em; /* Slightly larger font */
+    line-height: 1.6;
+    border: 1px solid rgba(232,40,26,0.5); /* More prominent border */
+    box-shadow: 0 0 25px rgba(0,0,0,0.7); /* Stronger shadow */
+}
+
+.info-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #1a1a1a transparent transparent transparent; /* Match tooltip background */
+}
+
+.info-icon-container:hover .info-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.product-card-button:hover {
+    background: linear-gradient(90deg, #ff3c2e, #e8281a); /* Reverse gradient on hover for effect */
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(232,40,26,0.7);
+}
+
+.enhancements-right-panel {
+    flex: 1; /* Take up remaining space */
+    overflow: hidden; /* Crucial for mask-image to work correctly */
+    display: flex;
+    justify-content: flex-end; /* Align image to the right */
+    align-items: center;
+    max-width: 700px; /* Adjust as needed, but flex will control primary sizing */
+}
+
+.enhancements-right-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the container */
+    object-position: right center; /* Align image to the right */
+    display: block;
+    /* Apply the mask effect */
+    mask-image: linear-gradient(to left, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 70%, transparent 100%);
+    border-radius: 10px; /* Keep existing border-radius if desired, but mask might override visual */
+    box-shadow: 0 0 30px rgba(232, 40, 26, 0.2); /* Keep existing shadow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .enhancements-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .enhancements-content-left {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .enhancements-right-panel { /* Adjust for responsive */
+        justify-content: center;
+        max-width: 100%;
+        height: 300px; /* Give it a fixed height on smaller screens */
+    }
+
+    .enhancements-right-image { /* Remove mask on smaller screens if it looks bad */
+        mask-image: none;
+        -webkit-mask-image: none;
+        object-position: center center; /* Center image on smaller screens */
+    }
+
+    .enhancements-title {
+        font-size: 2.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .enhancements-hero {
+        padding: 80px 0;
+    }
+
+    .enhancements-title {
+        font-size: 2.2em;
+    }
+
+    .enhancements-tagline {
+        font-size: 1em;
+    }
+
+    .product-card {
+        padding: 20px;
+    }
+
+    .product-card-title {
+        font-size: 1.5em;
+    }
+
+    .product-card-price {
+        font-size: 1.2em;
+    }
+
+    .product-card-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .enhancements-hero {
+        padding: 60px 0;
+    }
+
+    .enhancements-title {
+        font-size: 1.8em;
+    }
+
+    .enhancements-tagline {
+        font-size: 0.9em;
+    }
+
+    .product-cards-wrapper {
+        gap: 20px;
+    }
+}
+
+/* Navbar styles (assuming navbar.html will be loaded) */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(232, 40, 26, 0.2);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar-logo img {
+    height: 40px; /* Adjust logo size as needed */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
