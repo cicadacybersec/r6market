@@ -32,6 +32,10 @@
     gap: 12px;
     position: relative; /* Added for sold-banner positioning */
     overflow: hidden; /* Added for sold-banner overflow */
+
+    @media (max-width: 480px) {
+        padding: 20px;
+    }
 }
 
 .carousel-header-line {
@@ -51,6 +55,11 @@
     padding-left: 12px;
     flex-shrink: 1; /* Allow label to shrink if needed */
     min-width: 0; /* Allow text to wrap if necessary */
+
+    @media (max-width: 480px) {
+        font-size: 16px;
+        padding-left: 10px;
+    }
 }
 
 .account-price {
@@ -61,6 +70,11 @@
     margin-left: 15px; /* Space from label */
     white-space: nowrap;
     flex-shrink: 0; /* Prevent price from shrinking */
+
+    @media (max-width: 480px) {
+        font-size: 1em;
+        margin-left: 10px;
+    }
 }
 
 .carousel-screenshot {
@@ -98,6 +112,11 @@
     padding-left: 20px;
     position: relative;
     margin-bottom: 4px;
+
+    @media (max-width: 480px) {
+        font-size: 12px;
+        padding-left: 18px;
+    }
 }
 
 .carousel-highlights li::before {

@@ -253,6 +253,16 @@
     line-height: 1.6;
     border: 1px solid rgba(232,40,26,0.5); /* More prominent border */
     box-shadow: 0 0 25px rgba(0,0,0,0.7); /* Stronger shadow */
+
+    @media (max-width: 480px) {
+        width: 280px; /* Adjust width for smaller screens */
+        left: 0; /* Align to the left */
+        transform: translateX(0); /* Remove horizontal centering */
+        bottom: 100%; /* Position directly above */
+        margin-bottom: 10px; /* Add some space */
+        left: 50%; /* Re-center for smaller screens */
+        transform: translateX(-50%); /* Re-center for smaller screens */
+    }
 }
 
 .info-tooltip::after {
@@ -264,6 +274,11 @@
     border-width: 8px;
     border-style: solid;
     border-color: #1a1a1a transparent transparent transparent; /* Match tooltip background */
+
+    @media (max-width: 480px) {
+        left: 50%; /* Keep arrow centered */
+        transform: translateX(-50%);
+    }
 }
 
 .info-icon-container:hover .info-tooltip {

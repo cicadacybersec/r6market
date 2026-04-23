@@ -27,9 +27,14 @@
     box-shadow:
         0 0 20px rgba(232,40,26,0.1),
         inset 0 0 20px rgba(232,40,26,0.05);
-    max-width: 460px;
+    max-width: 460px; /* Default for desktop */
     width: 90%;
     padding: 40px;
+
+    @media (max-width: 480px) {
+        width: 95%;
+        padding: 25px 20px;
+    }
     position: relative;
     transform: scale(0.95);
     opacity: 0;
